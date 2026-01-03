@@ -11,7 +11,7 @@
 🧪 Learning <strong>Selenium</strong> for UI test automation  
 📂 Focused on <strong>projects, problem-solving, and clean code</strong></div>
 
-  <img src="https://your-image-url.com/logo.png" alt="Pratig Logo" width="120" style="border-radius: 10px;" />
+  <img src="./image/ﾁｭﾝ丸ﾋﾟﾖ on Pixiv.jpg" alt="Pratig Logo" width="120" style="border-radius: 10px;" />
 
 </div>
 <hr/>
