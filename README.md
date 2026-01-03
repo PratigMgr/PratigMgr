@@ -31,15 +31,12 @@
 <hr/>
 
 <h3>⚙️ Backend</h3>
-<img src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white" alt="PHP" />
+
+<p><strong><img src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white" alt="PHP" /> (Primary)</strong><br></p>
+<p>
 <img src="https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white" alt="Java" />
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" />
-<img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" alt="C#" />
-
-<ul>
-<li><strong>PHP (Primary)</strong></li>
-<li>Java, Python, C# (Project-based experience)</li>
-</ul>
+<img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" alt="C#" /> (Project-based experience)</p>
 
 <hr/>
 
