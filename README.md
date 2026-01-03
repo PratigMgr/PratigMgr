@@ -16,7 +16,7 @@
 <td width="200" valign="top">
 
 <!-- Right: Image -->
-<img src="https://raw.githubusercontent.com/PratigMgr/repo/main/images/logo.jpg" alt="Anime Logo" width="200" style="border-radius: 10px;" />
+<img src="ﾁｭﾝ丸ﾋﾟﾖ on Pixiv.jpg" alt="Anime Logo" width="200" style="border-radius: 10px;" />
 
 </td>
 </tr>
