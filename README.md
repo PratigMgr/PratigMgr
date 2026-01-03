@@ -1,24 +1,26 @@
-<section style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+<table>
+<tr>
+<td>
 
-  <!-- Left: Intro Text -->
-  <div>
-    <h1>Hi, I'm Pratig 👋</h1>
-    <p>🎓 Computer Programming student in Canada</p>
-    <p>💻 Aspiring <strong>Junior Full-Stack Developer</strong></p>
-    <p>🧠 Strong interest in backend development with hands-on full-stack projects</p>
-    <p>🚀 Building real-world applications using <strong>PHP, SQL, HTML, CSS, and JavaScript</strong></p>
-    <p>🔧 Gaining backend experience through projects in <strong>PHP, Java, Python, and C#</strong>  
-    <p>🧪 Learning <strong>Selenium</strong> for UI test automation</p>
-    <p>📂 Focused on <strong>projects, problem-solving, and clean code</strong></p>
-  </div>
-  
+<!-- Left: Intro Text -->
+<h1>Hi, I'm Pratig 👋</h1>
+<p>🎓 Computer Programming student in Canada</p>
+<p>💻 Aspiring <strong>Junior Full-Stack Developer</strong></p>
+<p>🧠 Strong interest in backend development with hands-on full-stack projects</p>
+<p>🚀 Building real-world applications using <strong>PHP, SQL, HTML, CSS, and JavaScript</strong></p>
+<p>🔧 Gaining backend experience through projects in <strong>PHP, Java, Python, and C#</strong></p>
+<p>🧪 Learning <strong>Selenium</strong> for UI test automation</p>
+<p>📂 Focused on <strong>projects, problem-solving, and clean code</strong></p>
 
-  <!-- Right: Image / Avatar -->
-  <aside>
-    <img src="ﾁｭﾝ丸ﾋﾟﾖ on Pixiv.jpg" alt="Anime Logo" width="150" style="border-radius: 10px;" />
-  </aside>
+</td>
+<td width="160">
 
-</section>
+<!-- Right: Image -->
+<img src="ﾁｭﾝ丸ﾋﾟﾖ on Pixiv.jpg" alt="Anime Logo" width="150" style="border-radius: 10px;" />
+
+</td>
+</tr>
+</table>
 
 <h2>🔧 Tech Stack</h2>
 
