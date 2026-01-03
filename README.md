@@ -1,13 +1,24 @@
-# Hi, I'm Pratig 👋
+<section style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
 
-🎓 Computer Programming diploma student in Canada  
-💻 Aspiring <strong>Junior Full-Stack Developer</strong>  
-🧠 Strong interest in backend development with hands-on full-stack projects  
-🚀 Building real-world applications using <strong>PHP, SQL, HTML, CSS, and JavaScript</strong>  
-🔧 Gaining backend experience through projects in <strong>PHP, Java, Python, and C#</strong>  
-🧪 Learning <strong>Selenium</strong> for UI test automation  
-📂 Focused on <strong>projects, problem-solving, and clean code</strong>
+  <!-- Left: Intro Text -->
+  <div>
+    <h1>Hi, I'm Pratig 👋</h1>
+    <p>🎓 Computer Programming student in Canada</p>
+    <p>💻 Aspiring <strong>Junior Full-Stack Developer</strong></p>
+    <p>🧠 Strong interest in backend development with hands-on full-stack projects</p>
+    <p>🚀 Building real-world applications using <strong>PHP, SQL, HTML, CSS, and JavaScript</strong></p>
+    <p>🔧 Gaining backend experience through projects in <strong>PHP, Java, Python, and C#</strong>  
+    <p>🧪 Learning <strong>Selenium</strong> for UI test automation</p>
+    <p>📂 Focused on <strong>projects, problem-solving, and clean code</strong></p>
+  </div>
+  
 
+  <!-- Right: Image / Avatar -->
+  <aside>
+    <img src="ﾁｭﾝ丸ﾋﾟﾖ on Pixiv.jpg" alt="Anime Logo" width="150" style="border-radius: 10px;" />
+  </aside>
+
+</section>
 <hr/>
 
 <h2>🔧 Tech Stack</h2>
