@@ -19,7 +19,6 @@
   </aside>
 
 </section>
-<hr/>
 
 <h2>🔧 Tech Stack</h2>
 
