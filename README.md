@@ -13,7 +13,7 @@
 <p>📂 Focused on <strong>projects, problem-solving, and clean code</strong></p>
 
 </td>
-<td width="200" valign="top">
+<td width="250" valign="middle" align="center">
 
 <!-- Right: Image -->
 <img src="ﾁｭﾝ丸ﾋﾟﾖ on Pixiv.jpg" alt="Anime Logo" width="200" style="border-radius: 10px;" />
