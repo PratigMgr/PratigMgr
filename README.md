@@ -32,11 +32,11 @@
 
 <h3>⚙️ Backend</h3>
 
-<p><strong><img src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white" alt="PHP" /> (Primary)</strong><br></p>
+<p><img src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white" alt="PHP" /><strong> (Primary)</strong><br></p>
 <p>
 <img src="https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white" alt="Java" />
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" />
-<img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" alt="C#" /> (Project-based experience)</p>
+<img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" alt="C#" /><strong> (Project-based experience)</strong></p>
 
 <hr/>
 
