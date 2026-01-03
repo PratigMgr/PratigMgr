@@ -1,19 +1,13 @@
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+# Hi, I'm Pratig 👋
 
-  <!-- Left: Intro text -->
-  <div>
-    <h1>Hi, I'm Pratig 👋</h1>
 🎓 Computer Programming diploma student in Canada  
 💻 Aspiring <strong>Junior Full-Stack Developer</strong>  
 🧠 Strong interest in backend development with hands-on full-stack projects  
 🚀 Building real-world applications using <strong>PHP, SQL, HTML, CSS, and JavaScript</strong>  
 🔧 Gaining backend experience through projects in <strong>PHP, Java, Python, and C#</strong>  
 🧪 Learning <strong>Selenium</strong> for UI test automation  
-📂 Focused on <strong>projects, problem-solving, and clean code</strong></div>
+📂 Focused on <strong>projects, problem-solving, and clean code</strong>
 
-  <img src="./image/ﾁｭﾝ丸ﾋﾟﾖ on Pixiv.jpg" alt="Pratig Logo" width="120" style="border-radius: 10px;" />
-
-</div>
 <hr/>
 
 <h2>🔧 Tech Stack</h2>
