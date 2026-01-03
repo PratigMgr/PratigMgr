@@ -105,7 +105,7 @@
 
 <h2>📫 Connect</h2>
 <!-- LinkedIn clickable -->
-<a href="www.linkedin.com/in/pratig-mgr">
+<a href="https//linkedin.com/in/pratig-mgr">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
 
