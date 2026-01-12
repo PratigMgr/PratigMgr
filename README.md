@@ -4,7 +4,7 @@
 
 <!-- Left: Intro Text -->
 <h1>Hi, I'm Pratig 👋</h1>
-<p>🎓 Computer Programming student in Canada</p>
+<p>🎓 Computer Programming student</p>
 <p>💻 Aspiring <strong>Junior Full-Stack Developer</strong></p>
 <p>🧠 Strong interest in backend development with hands-on full-stack projects</p>
 <p>🚀 Building real-world applications using <strong>PHP, SQL, HTML, CSS, and JavaScript</strong></p>
