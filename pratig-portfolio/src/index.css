@@ -1,0 +1,7 @@
+/* Minimal reset — full styling lives in App.css */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
