@@ -1,0 +1,93 @@
+.texttype {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: pre-wrap;
+}
+
+/* Paragraph-mode variant — used for the intro lede text, which types out
+   as full-width, wrapping copy rather than a single inline headline. */
+.texttype--block {
+  display: block;
+  width: 100%;
+}
+
+.texttype__text {
+  display: inline;
+}
+
+.texttype__char {
+  display: inline-block;
+}
+
+/* ---- shine painted straight onto the real letters (no overlay/shadow layer).
+   Applied per character with a small stagger so it ripples across the word
+   as it sweeps, rather than needing one continuous background across
+   variable-width glyphs. ---- */
+.texttype__char.texttype__text--shiny {
+  /* Solid, always-visible fallback color first — if background-clip:text
+     isn't supported (or fails to apply for any reason), the letters stay
+     visible in this color instead of vanishing (color: transparent with
+     no working clip = invisible text). */
+  color: var(--sky, currentColor);
+  background-image: linear-gradient(
+    100deg,
+    var(--sky, currentColor) 20%,
+    var(--sky-light, #fff) 50%,
+    var(--sky, currentColor) 80%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 0;
+  animation-name: texttype-shine;
+  animation-duration: 3.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .texttype__char.texttype__text--shiny {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes texttype-shine {
+  0%, 30% {
+    background-position: 160% 0;
+  }
+  55%, 100% {
+    background-position: -120% 0;
+  }
+}
+
+/* ---- blinking typing cursor ---- */
+.texttype__cursor {
+  display: inline-block;
+  margin-left: 0.04em;
+  color: var(--sky, currentColor);
+  animation-name: texttype-blink;
+  animation-timing-function: steps(1, end);
+  animation-iteration-count: infinite;
+}
+
+@keyframes texttype-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .texttype__char.texttype__text--shiny {
+    animation: none;
+    background-image: none;
+    color: var(--sky, currentColor);
+    -webkit-text-fill-color: var(--sky, currentColor);
+  }
+  .texttype__cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
