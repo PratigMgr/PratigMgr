@@ -1,4 +1,4 @@
-# Pratig Thapa Magar — Portfolio
+## Pratig Thapa Magar — Portfolio
 
 A ready-to-run React + Vite portfolio site. This zip already includes the
 full project setup (package.json, Vite config, etc.). You don't need to
