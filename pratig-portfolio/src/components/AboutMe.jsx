@@ -34,7 +34,7 @@ function AboutMe() {
           </div>
 
           <div className="about-me__portrait">
-            <img src="/img/gazi-photo.jpg" alt="Portrait of Pratig" loading="lazy" />
+            <img src="/img/pratig-photo.jpg" alt="Portrait of Pratig" loading="lazy" />
           </div>
         </div>
       </div>
