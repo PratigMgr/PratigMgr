@@ -104,6 +104,13 @@ svg {
 .layout__content {
   flex: 1;
   min-width: 0;
+  /* Lets descendants (see .about__grid) query the space actually
+     available to this column via @container instead of the raw
+     window width — so the breakpoint correctly reacts to whether
+     the sidebar is currently reserving space, not just how wide
+     the browser window is. */
+  container-type: inline-size;
+  container-name: content;
 }
 
 /* ==========================================================================
@@ -264,6 +271,32 @@ svg {
   color: var(--accent);
   background: rgba(255, 180, 84, 0.1);
 }
+.game-mode-toggle {
+  position: relative;
+}
+.game-mode-toggle__nudge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: nudge-pulse 2s ease-in-out infinite;
+}
+@keyframes nudge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 180, 84, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(255, 180, 84, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-mode-toggle__nudge {
+    animation: none;
+  }
+}
 @media (max-width: 460px) {
   .topbar__actions .toggle-label {
     display: none;
@@ -278,7 +311,7 @@ svg {
 .sidebar {
   display: none;
 }
-@media (min-width: 1080px) {
+@media (min-width: 600px) {
   .layout__content {
     margin-left: var(--sidebar-width);
     transition: margin-left 0.3s ease;
@@ -307,7 +340,7 @@ svg {
 .profile-bar {
   display: none;
 }
-@media (min-width: 1080px) {
+@media (min-width: 600px) {
   .profile-bar {
     display: flex;
     align-items: flex-start;
@@ -459,7 +492,7 @@ svg {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
-@media (min-width: 1080px) {
+@media (min-width: 600px) {
   .topbar {
     display: none;
   }
@@ -599,7 +632,7 @@ svg {
   color: var(--ink-faint);
   text-align: center;
 }
-@media (max-width: 860px) {
+@container content (max-width: 860px) {
   .about__grid {
     grid-template-columns: 1fr;
   }
@@ -608,7 +641,18 @@ svg {
     margin-bottom: 12px;
   }
   .ascii-portrait {
-    max-width: 260px;
+    max-width: 200px;
+  }
+  /* The forced near-full-viewport height only earns its keep in the
+     two-column desktop layout, where it makes the intro read like a
+     landing hero. Once the grid stacks into one column, that same
+     min-height just adds dead scroll space below a much shorter
+     portrait+text stack — so drop it here. */
+  .about {
+    min-height: auto;
+  }
+  .about__badge {
+    margin-bottom: 8px;
   }
 }
 
@@ -903,6 +947,28 @@ svg {
   margin-bottom: 22px;
   flex: 1;
 }
+.project-diagram {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.project-diagram__node {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 7px 11px;
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+.project-diagram__arrow {
+  width: 18px;
+  height: 9px;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
 .project-card__stack {
   display: flex;
   flex-wrap: wrap;
@@ -1142,6 +1208,9 @@ svg {
 }
 .footer__inner a:hover {
   color: var(--accent);
+}
+.footer__updated {
+  opacity: 0.75;
 }
 
 @media (max-width: 720px) {

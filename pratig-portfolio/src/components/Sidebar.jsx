@@ -17,16 +17,29 @@ const SOCIAL_LINKS = [
 ];
 
 function GameModeToggle({ active, onToggle }) {
+  const [hasBeenUsed, setHasBeenUsed] = useState(
+    () => typeof window !== 'undefined' && window.localStorage.getItem('game-mode-tried') === '1'
+  );
+
+  const handleClick = () => {
+    if (!hasBeenUsed) {
+      window.localStorage.setItem('game-mode-tried', '1');
+      setHasBeenUsed(true);
+    }
+    onToggle();
+  };
+
   return (
     <button
       type="button"
       className={`theme-toggle game-mode-toggle ${active ? 'is-active' : ''}`}
-      onClick={onToggle}
+      onClick={handleClick}
       aria-pressed={active}
       aria-label="Toggle game mode"
     >
       <svg aria-hidden="true"><use href="#game-icon" /></svg>
       <span className="toggle-label">{active ? 'Exit game mode' : 'Game mode'}</span>
+      {!hasBeenUsed && <span className="game-mode-toggle__nudge" aria-hidden="true" />}
     </button>
   );
 }

@@ -105,6 +105,21 @@ function AsciiPortrait({ src, alt = '', cols = 90, start = true }) {
 
     function onResize() { if (img.complete) build(img); }
 
+    // A window resize isn't the only thing that changes this canvas's
+    // available width — toggling the sidebar animates `.layout__content`'s
+    // margin, which reflows this container without ever firing a window
+    // resize event. Without watching the container itself, the canvas kept
+    // whatever size it was built at and looked frozen/misplaced after a
+    // sidebar toggle. A ResizeObserver catches that reflow directly.
+    // Debounced so a 0.3s CSS transition (many intermediate widths) triggers
+    // one rebuild once it settles, not a rebuild on every animation frame.
+    let resizeDebounce = null;
+    const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(resizeDebounce);
+      resizeDebounce = setTimeout(() => { if (img.complete) build(img); }, 120);
+    });
+    resizeObserver.observe(wrap);
+
     const handlePointerMove = (e) => {
       const rect = wrap.getBoundingClientRect();
       const nx = e.clientX - rect.left;
@@ -233,6 +248,8 @@ function AsciiPortrait({ src, alt = '', cols = 90, start = true }) {
     return () => {
       cancelled = true;
       cancelAnimationFrame(rafRef.current);
+      clearTimeout(resizeDebounce);
+      resizeObserver.disconnect();
       window.removeEventListener('resize', onResize);
       wrap.removeEventListener('mousemove', handlePointerMove);
       wrap.removeEventListener('mouseleave', handlePointerLeave);

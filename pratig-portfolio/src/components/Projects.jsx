@@ -1,6 +1,28 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
 
+// A small, glanceable flow diagram for the featured project card — breaks
+// up the text wall and shows the pipeline at a glance instead of making
+// visitors parse it out of the summary paragraph.
+function ReviewAgentDiagram() {
+  const steps = ['GitHub PR', 'Vector search', 'Groq LLM', 'Review comment'];
+
+  return (
+    <div className="project-diagram" aria-hidden="true">
+      {steps.map((step, i) => (
+        <React.Fragment key={step}>
+          <span className="project-diagram__node">{step}</span>
+          {i < steps.length - 1 && (
+            <svg className="project-diagram__arrow" viewBox="0 0 24 12" fill="none">
+              <path d="M0 6h20M14 1l6 5-6 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+  );
+}
+
 const PROJECTS = [
   {
     id: 'ai-code-review',
@@ -11,6 +33,7 @@ const PROJECTS = [
     repoUrl: 'https://github.com/PratigMgr/code-review-agent',
     liveUrl: '#',
     featured: true,
+    diagram: true,
   },
   {
     id: 'accessibility-dashboard',
@@ -71,6 +94,8 @@ function Projects() {
               )}
               <h3>{project.name}</h3>
               <p className="project-card__summary">{project.summary}</p>
+
+              {project.diagram && <ReviewAgentDiagram />}
 
               <ul className="project-card__stack">
                 {project.stack.map((tech) => (
