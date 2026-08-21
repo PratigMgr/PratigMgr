@@ -11,7 +11,7 @@ const NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: 'GitHub', href: 'https://github.com/pratigmgr', icon: 'github-icon' },
+  { label: 'GitHub', href: 'https://github.com/PratigMgr', icon: 'github-icon' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pratig-mgr', icon: 'linkedin-icon' },
   { label: 'Email', href: 'mailto:Pratigthapa54504@gmail.com', icon: 'mail-icon' },
 ];

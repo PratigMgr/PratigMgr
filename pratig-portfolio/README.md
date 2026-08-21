@@ -1,7 +1,7 @@
-## Pratig Thapa Magar — Portfolio
+# Pratig Thapa Magar — Portfolio
 
 A ready-to-run React + Vite portfolio site. This zip already includes the
-full project setup (package.json, Vite config, etc.). You don't need to
+full project setup (package.json, Vite config, etc.) — you don't need to
 scaffold anything yourself.
 
 ## Run it
@@ -16,19 +16,16 @@ npm run dev
 
 Then open the local URL it prints (usually `http://localhost:5173`).
 
-## Two themes, one toggle
+## Dark mode + Game mode
 
-The site ships with two looks behind the sun/moon button in the sidebar
-(desktop) or top bar (mobile):
+The site is dark-mode only — no theme toggle. A fixed sidebar (desktop)
+or top bar (mobile) holds your name, nav, and socials, with a warm amber
+accent. All colors live as CSS variables in `src/App.css` under `:root`.
 
-- **Dark** (default) — a fixed sidebar with your name/nav/socials, warm
-  amber accent, structured after brittanychiang.com's layout.
-- **Light** — your original warm-paper editorial theme, unchanged, just
-  reflowed into the new sidebar layout.
-
-The choice is remembered in the browser (`localStorage`) between visits.
-All colors live as CSS variables in `src/App.css` — `:root` is the dark
-theme, `[data-theme='light']` overrides it back to the warm palette.
+In place of a theme switch, the sidebar/top bar has a **Game mode**
+toggle. Turning it on hides the sidebar and overlays a playable Snake
+game on top of the page, using live DOM text as the walls. Turning it
+off restores whatever the sidebar's visibility was beforehand.
 
 ## Structure
 
@@ -38,20 +35,25 @@ package.json
 vite.config.js
 src/
   main.jsx              # Vite entry point — mounts App, don't need to touch this
-  App.jsx                # theme state + assembles all sections
+  App.jsx                # sidebar/game-mode state + assembles all sections
   App.css                # all styles (design tokens, layout, components)
   index.css               # minimal global reset
   components/
     IconSprite.jsx        # inline <symbol> defs used by <use href="#..."/> icons
     Sidebar.jsx            # 01 — desktop fixed sidebar / mobile top bar + nav + socials
-    About.jsx               # 01 — intro + skills marquee (formerly Hero.jsx)
-    Capabilities.jsx         # 02 — "what I offer" cards
-    Skills.jsx                # 03 — component stack by layer
-    Experience.jsx             # 04 — work history timeline
-    Projects.jsx                 # 05 — build log / project cards
-    Writing.jsx                   # 06 — blog/notes list (empty-state until you add posts)
-    Contact.jsx                    # 07 — contact form + socials
+    Loader.jsx              # intro loading overlay, gates the entrance animations
+    ScrollProgress.jsx       # top scroll-progress bar
+    About.jsx                 # 01 — intro + skills marquee (formerly Hero.jsx)
+    Greeting.jsx                # typing-effect greeting line used in About
+    AsciiPortrait.jsx             # ASCII-art render of the portrait photo
+    Capabilities.jsx                # 02 — "what I offer" cards
+    Skills.jsx                       # 03 — component stack by layer
+    Experience.jsx                    # 04 — work history timeline
+    Projects.jsx                       # 05 — build log / project cards
+    Writing.jsx                         # 06 — blog/notes list (empty-state until you add posts)
+    Contact.jsx                          # 07 — contact form + socials
     Footer.jsx
+    SnakeGame.jsx                         # Game mode overlay — Snake, using live DOM text as walls
 ```
 
 ## Customize
@@ -65,11 +67,11 @@ src/
 - Blog posts — the `POSTS` array in `src/components/Writing.jsx` (empty by
   default — shows a placeholder until you add real entries)
 - Contact links — `SOCIAL_LINKS` in `src/components/Sidebar.jsx` and
-  `src/components/Contact.jsx` (the GitHub link is a placeholder `#` —
-  paste your real profile URL in both places)
-- Colors, fonts, spacing — defined once at the top of `src/App.css` under
-  `:root` (dark) and `[data-theme='light']` (warm), so a single edit
-  updates the whole site
+  `src/components/Contact.jsx` (GitHub, LinkedIn, email, and portfolio
+  domain are already filled in — update all instances together if any
+  of these change)
+- Colors, fonts, spacing — defined once at the top of `src/App.css`
+  under `:root`, so a single edit updates the whole site
 
 ## Build for deployment
 

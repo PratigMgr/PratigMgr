@@ -3,46 +3,45 @@ import useReveal from '../hooks/useReveal';
 
 const PROJECTS = [
   {
-    id: 'portfolio-site',
-    name: 'Personal Portfolio Website',
+    id: 'ai-code-review',
+    name: 'AI Code Review Agent',
     summary:
-      'This site — built to showcase my skills and projects with a fully custom design and smooth scroll-driven interactions.',
-    stack: ['HTML', 'CSS', 'JavaScript', 'React'],
-    repoUrl: '#',
-    liveUrl: 'https://Pratig_mgr.com',
+      'Retrieval-augmented GitHub PR review agent that grounds feedback in the repo\'s own codebase — surfaces similar existing code via a self-built JSON vector store before generating review comments. Includes a labeled eval harness with planted-bug test cases and an automated grader to score review quality across prompt/model changes.',
+    stack: ['TypeScript', 'Node.js', 'Express', 'Groq LLM', 'transformers.js', 'Octokit'],
+    repoUrl: 'https://github.com/PratigMgr/code-review-agent',
+    liveUrl: '#',
     featured: true,
   },
   {
-    id: 'library-management',
-    name: 'Library Management System',
-    summary: 'A desktop application to manage books and borrowers efficiently.',
-    stack: ['Python', 'Java'],
-    repoUrl: '#',
+    id: 'accessibility-dashboard',
+    name: 'Accessibility Compliance Dashboard',
+    summary:
+      'Headless-browser crawler (Playwright) that runs automated WCAG/AODA checks via axe-core and feeds a React dashboard with plain-language fix suggestions. Stores historical scan results in MongoDB to track a site\'s accessibility score over time — targeting AODA-regulated businesses that need audit trails, not just one-off reports.',
+    stack: ['React', 'Node.js', 'Express', 'Playwright', 'axe-core', 'MongoDB'],
+    repoUrl: 'https://github.com/PratigMgr',
     liveUrl: '#',
+    featured: true,
+    inProgress: true,
   },
   {
-    id: 'expense-tracker',
-    name: 'Expense Tracker',
-    summary: 'A mobile app to record and analyze daily expenses at a glance.',
-    stack: ['Mobile', 'JavaScript'],
-    repoUrl: '#',
+    id: 'component-library',
+    name: 'Figma-Synced Accessible Component Library',
+    summary:
+      'Publishable npm component library that pulls design tokens (color, spacing, typography) directly from Figma via the Figma API, keeping design and code automatically in sync. Components are accessibility-first — ARIA roles, keyboard navigation — validated with axe-core and documented in Storybook with CI/CD for automated versioning and npm publishing.',
+    stack: ['React', 'TypeScript', 'Storybook', 'Figma API', 'axe-core'],
+    repoUrl: 'https://github.com/PratigMgr',
     liveUrl: '#',
+    inProgress: true,
   },
   {
-    id: 'student-info-system',
-    name: 'Student Information System',
-    summary: 'A system backed by a MySQL database to securely manage student records.',
-    stack: ['MySQL', 'Java'],
+    id: 'portfolio-site',
+    name: 'Personal Portfolio Website',
+    summary:
+      'This site — a responsive React/Vite portfolio with a custom dark-theme toggle, scroll-based reveal animations, and a component-driven layout with hand-written CSS design tokens. Includes a playable Snake mini-game Easter egg where live DOM text acts as dynamic walls and collision detection runs against real-time page layout.',
+    stack: ['React', 'Vite', 'JavaScript', 'CSS'],
     repoUrl: '#',
-    liveUrl: '#',
-  },
-  {
-    id: 'quiz-app',
-    name: 'Dynamic Quiz Application',
-    summary: 'A quiz app that provides real-time scoring and instant user feedback.',
-    stack: ['JavaScript', 'React'],
-    repoUrl: '#',
-    liveUrl: '#',
+    liveUrl: 'https://pratigmgr.com',
+    featured: false,
   },
 ];
 
@@ -67,6 +66,9 @@ function Projects() {
               style={{ transitionDelay: `${index * 0.07}s` }}
             >
               <span className="project-card__index">{String(index + 1).padStart(2, '0')}</span>
+              {project.inProgress && (
+                <span className="project-card__badge">In Progress</span>
+              )}
               <h3>{project.name}</h3>
               <p className="project-card__summary">{project.summary}</p>
 

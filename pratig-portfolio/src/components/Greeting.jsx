@@ -24,7 +24,7 @@ function IDrop({ index }) {
   );
 }
 
-function Greeting({ words = ['Hi,', 'Pratig', 'Here'], active = true, showCursor = true, onComplete }) {
+function Greeting({ words = ['Hi,', 'Pratig,', 'Here'], active = true, showCursor = true, onComplete }) {
   const sentence = words.join(' ');
 
   return (

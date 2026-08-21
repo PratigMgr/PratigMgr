@@ -7,11 +7,12 @@ import Greeting from './Greeting';
 // JSX below so the CSS animation can loop seamlessly at -50% translateX
 const MARQUEE_SKILLS = [
   'React', 'TypeScript', 'Node.js', 'Express', 'JavaScript',
-  'REST APIs', 'MongoDB', 'Git', 'Figma', 'Python', 'Java',
+  'REST APIs', 'MongoDB', 'Groq LLM', 'RAG Pipelines', 'Playwright',
+  'axe-core', 'Figma', 'Git', 'Python', 'Storybook',
 ];
 
-const LEDE_1 = "Full-stack developer with a diploma in Computer Programming, building end-to-end web apps with React, Node.js, and TypeScript from database and API design through to the interface people actually touch.";
-const LEDE_2 = "I started on the design side, sketching wireframes and prototypes in Figma, before moving into building the interfaces and the logic behind them myself. so I design with an eye on how something will actually be built, and build with an eye on how it should feel to use.";
+const LEDE_1 = "Full-stack developer with a Diploma in Computer Programming, building end-to-end web apps with React, TypeScript, and Node.js — from database and API design through to the interface people actually touch. Shipped a retrieval-grounded AI code review agent with an automated eval harness, an accessibility compliance dashboard, and a Figma-synced component library.";
+const LEDE_2 = "I started on the design side — sketching wireframes and running usability tests in Figma — before moving into building the interfaces and the logic behind them myself. So I design with an eye on how something will actually be built, and build with an eye on how it should feel to use.";
 
 function About({ start = true }) {
   const [revealRef, isVisible] = useReveal(0.2);

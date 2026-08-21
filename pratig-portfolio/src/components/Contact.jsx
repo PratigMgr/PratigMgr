@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import useReveal from '../hooks/useReveal';
 
 const SOCIAL_LINKS = [
-  { label: 'GitHub', href: 'https://github.com/pratigmgr' },
+  { label: 'GitHub', href: 'https://github.com/PratigMgr' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pratig-mgr' },
-  { label: 'Portfolio', href: 'https://Pratig_mgr.com' },
+  { label: 'Portfolio', href: 'https://pratigmgr.com' },
   { label: 'Phone', href: 'tel:+19059227880' },
 ];
 

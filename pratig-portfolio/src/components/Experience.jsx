@@ -2,18 +2,28 @@ import React from 'react';
 import useReveal from '../hooks/useReveal';
 
 const EXPERIENCE = [
-  {
+    {
     id: 'yeti-digital',
     role: 'Jr. UI/UX Designer',
     company: 'Yeti Private Digital Pvt. Ltd — Chitwan, Nepal',
     period: 'Jan 2023 — Aug 2024',
     highlights: [
-      'Designed UI layouts and wireframes for web and mobile applications.',
-      'Created prototypes and visual designs using Figma / Adobe XD.',
-      'Assisted in user research and translated insights into design improvements.',
-      'Collaborated with developers to ensure accurate implementation of designs.',
+      'Designed UI layouts, wireframes, and interactive prototypes for web and mobile products in Figma and Adobe XD; collaborated directly with developers to ensure pixel-faithful implementation.',
+      'Conducted user research, synthesized findings into concrete design improvements, and ran iterative usability testing sessions to validate changes.',
+      'Maintained and evolved a shared design system and style guide used across multiple live products.',
     ],
   },
+  {
+    id: 'wendys',
+    role: 'Crew Member',
+    company: 'Wendy\'s — Oshawa, ON',
+    period: 'Jan 2025 — Present',
+    highlights: [
+      'Coordinate tasks in a fast-paced team environment, consistently meeting deadlines under pressure.',
+      'Adapt quickly to shifting priorities while maintaining accuracy and attention to detail.',
+    ],
+  },
+
 ];
 
 function Experience() {
