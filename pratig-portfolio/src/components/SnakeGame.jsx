@@ -273,6 +273,21 @@ function laserHitsSnake(game) {
   }
   return false;
 }
+// Once every apple is gone, a single exit door appears at a random open
+// cell somewhere on the page — not on a wall, not on the snake itself.
+// Nothing marks it in advance; the player has to go find it.
+function placeDoor(game) {
+  for (let attempt = 0; attempt < 500; attempt += 1) {
+    const gx = Math.floor(Math.random() * game.cols);
+    const gy = Math.floor(Math.random() * game.rows);
+    const key = `${gx},${gy}`;
+    if (game.walls.has(key)) continue;
+    if (game.snake.some((seg) => seg.x === gx && seg.y === gy)) continue;
+    return { x: gx, y: gy };
+  }
+  return null;
+}
+
 function keyToDirection(key) {
   switch (key) {
     case 'ArrowUp':
@@ -361,7 +376,8 @@ function buildInitialState(cellSize) {
     nextDirection: { x: 1, y: 0 },
     apples,
     score: 0,
-    status: 'playing',
+    status: 'intro', // 'intro' | 'playing' | 'won' | 'dead'
+    door: null,
     playStartTime: 0,
     laserCycleStart: 0,
     laserCyclesCompleted: 0,
@@ -444,7 +460,17 @@ function SnakeGame({ active, onExit }) {
       }
       game.snake = newSnake;
 
-      if (game.score >= TOTAL_APPLES) {
+      // Every apple is gone — drop a single exit door somewhere random on
+      // the page. Nothing points to it; the player has to explore to find
+      // it, and reaching it is what actually wins the game.
+      if (game.score >= TOTAL_APPLES && !game.door) {
+        game.door = placeDoor(game);
+        setToast('🚪 All apples collected — now find the exit door!');
+        window.clearTimeout(toastTimeoutRef.current);
+        toastTimeoutRef.current = window.setTimeout(() => setToast(null), 2400);
+      }
+
+      if (game.door && newHead.x === game.door.x && newHead.y === game.door.y) {
         game.status = 'won';
       }
 
@@ -603,8 +629,17 @@ function SnakeGame({ active, onExit }) {
     };
   }, [active]);
 
+  const startGame = () => {
+    const game = gameRef.current;
+    if (!game) return;
+    game.status = 'playing';
+    game.playStartTime = performance.now();
+    forceRender();
+  };
+
   const restart = () => {
     gameRef.current = buildInitialState(CELL);
+    gameRef.current.status = 'playing';
     gameRef.current.playStartTime = performance.now();
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     setToast(null);
@@ -626,6 +661,7 @@ function SnakeGame({ active, onExit }) {
     lasers,
     laserPhase,
     laserCountdownSec,
+    door,
   } = game;
   const laserDanger = laserPhase === 'warning' || laserPhase === 'active';
 
@@ -645,6 +681,19 @@ function SnakeGame({ active, onExit }) {
         </div>
       )}
       <div className="snake-game-board" style={{ width: worldWidth, height: worldHeight }}>
+        {door && (
+          <div
+            className="snake-game-door"
+            style={{
+              left: door.x * cellSize,
+              top: door.y * cellSize,
+              width: cellSize,
+              height: cellSize,
+            }}
+          >
+            🚪
+          </div>
+        )}
         {apples.map((a) => (
           <div
             key={`apple-${a.x}-${a.y}`}
@@ -690,6 +739,9 @@ function SnakeGame({ active, onExit }) {
 
       <div className="snake-game-hud">
         <span className="snake-game-hud__label">🍎 {score}/{TOTAL_APPLES}</span>
+        {door && (
+          <span className="snake-game-hud__door">🚪 Find the exit door!</span>
+        )}
         <span className={`snake-game-hud__laser ${laserDanger ? 'is-on' : ''}`}>
           {laserPhase === 'active'
             ? '🔴 Laser active!'
@@ -707,21 +759,49 @@ function SnakeGame({ active, onExit }) {
 
       {status !== 'playing' && (
         <div className="snake-game-modal-wrap">
-          <div className="snake-game-modal">
-            <h3>{status === 'won' ? 'You collected all 10 apples!' : 'Game over'}</h3>
-            <p>
-              {status === 'won'
-                ? 'Nice run — the whole page is cleared.'
-                : 'The snake ran into a wall of text, itself, or a laser.'}
-            </p>
-            <div className="snake-game-modal__actions">
-              <button type="button" className="btn btn--primary" onClick={restart}>
-                Play again
-              </button>
-              <button type="button" className="btn btn--ghost" onClick={onExit}>
-                Exit game mode
-              </button>
-            </div>
+          <div className={`snake-game-modal ${status === 'intro' ? 'snake-game-modal--intro' : ''}`}>
+            {status === 'intro' && (
+              <>
+                <h3>🐍 Snake: Page Crawler</h3>
+                <p>
+                  Steer with the <strong>arrow keys</strong> or <strong>WASD</strong>.
+                  The snake grows as it goes, and the page scrolls along with it.
+                </p>
+                <ul className="snake-game-modal__list">
+                  <li>Eat all {TOTAL_APPLES} apples hidden around the page.</li>
+                  <li>The page's own text is solid — don't run into it, yourself, or the edge.</li>
+                  <li>Every so often a laser grid sweeps the board — clear out before it fires.</li>
+                  <li>Once every apple's gone, a hidden exit door appears somewhere random. Find it to win.</li>
+                </ul>
+                <div className="snake-game-modal__actions">
+                  <button type="button" className="btn btn--primary" onClick={startGame}>
+                    Start game
+                  </button>
+                  <button type="button" className="btn btn--ghost" onClick={onExit}>
+                    Exit game mode
+                  </button>
+                </div>
+              </>
+            )}
+
+            {status !== 'intro' && (
+              <>
+                <h3>{status === 'won' ? 'You found the exit!' : 'Game over'}</h3>
+                <p>
+                  {status === 'won'
+                    ? 'All 10 apples collected and the door found — nice run.'
+                    : 'The snake ran into a wall of text, itself, or a laser.'}
+                </p>
+                <div className="snake-game-modal__actions">
+                  <button type="button" className="btn btn--primary" onClick={restart}>
+                    Play again
+                  </button>
+                  <button type="button" className="btn btn--ghost" onClick={onExit}>
+                    Exit game mode
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
