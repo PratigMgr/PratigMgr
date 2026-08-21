@@ -1,5 +1,6 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
+import SectionHeading from './SectionHeading';
 
 const CAPABILITIES = [
   {
@@ -56,7 +57,7 @@ function Capabilities() {
   return (
     <section id="capabilities" className="section section--alt">
       <div className="section__inner" ref={revealRef}>
-        <p className="eyebrow"><span className="eyebrow__index">02</span> Capabilities</p>
+        <SectionHeading label="capabilities" />
         <h2>What I offer</h2>
         <p className="section__lede">
           Four things I keep coming back to, whatever the project.

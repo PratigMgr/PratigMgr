@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useReveal from '../hooks/useReveal';
+import SectionHeading from './SectionHeading';
 
 const SOCIAL_LINKS = [
   { label: 'GitHub', href: 'https://github.com/PratigMgr' },
@@ -46,7 +47,7 @@ function Contact() {
   return (
     <section id="contact" className="section">
       <div className="section__inner" ref={revealRef}>
-        <p className="eyebrow"><span className="eyebrow__index">07</span> Contact</p>
+        <SectionHeading label="contact" />
 
         <h2 className="contact__headline">
           Let's build something —{' '}

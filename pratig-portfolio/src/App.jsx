@@ -4,6 +4,7 @@ import IconSprite from './components/IconSprite';
 import Loader from './components/Loader';
 import Sidebar from './components/Sidebar';
 import About from './components/About';
+import AboutMe from './components/AboutMe';
 import Capabilities from './components/Capabilities';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -54,6 +55,7 @@ function App() {
         <div className="layout__content">
           <main>
             <About start={introDone} />
+            <AboutMe />
             <Capabilities />
             <Skills />
             <Experience />

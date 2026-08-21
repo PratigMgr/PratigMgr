@@ -1,5 +1,6 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
+import SectionHeading from './SectionHeading';
 
 // Add real posts here as you publish them — each renders as a row with
 // the date, title, and a link out. Leave the array empty and the section
@@ -14,7 +15,7 @@ function Writing() {
   return (
     <section id="writing" className="section">
       <div className="section__inner" ref={revealRef}>
-        <p className="eyebrow"><span className="eyebrow__index">06</span> Writing</p>
+        <SectionHeading label="writing" />
         <h2>Notes &amp; write-ups</h2>
         <p className="section__lede">
           Short posts on things I've built or learned along the way.

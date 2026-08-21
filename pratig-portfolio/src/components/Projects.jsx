@@ -1,5 +1,6 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
+import SectionHeading from './SectionHeading';
 
 // A small, glanceable flow diagram for the featured project card — breaks
 // up the text wall and shows the pipeline at a glance instead of making
@@ -74,7 +75,7 @@ function Projects() {
   return (
     <section id="work" className="section section--alt">
       <div className="section__inner" ref={revealRef}>
-        <p className="eyebrow"><span className="eyebrow__index">05</span> Build log</p>
+        <SectionHeading label="build log" />
         <h2>Selected work</h2>
         <p className="section__lede">
           A few projects that shipped end to end — interface, logic, and

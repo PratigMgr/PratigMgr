@@ -1,5 +1,6 @@
 import React from "react";
 import useReveal from "../hooks/useReveal";
+import SectionHeading from "./SectionHeading";
 
 const STACK_LAYERS = [
   {
@@ -46,9 +47,7 @@ function Skills() {
   return (
     <section id="stack" className="section section--alt">
       <div className="section__inner" ref={revealRef}>
-        <p className="eyebrow">
-          <span className="eyebrow__index">03</span> Component stack
-        </p>
+        <SectionHeading label="component stack" />
         <h2>What I build with</h2>
         <p className="section__lede">
           Every layer of a product is a component in the same system — here's

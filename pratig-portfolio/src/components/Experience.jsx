@@ -1,5 +1,6 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
+import SectionHeading from './SectionHeading';
 
 const EXPERIENCE = [
     {
@@ -32,7 +33,7 @@ function Experience() {
   return (
     <section id="experience" className="section">
       <div className="section__inner" ref={revealRef}>
-        <p className="eyebrow"><span className="eyebrow__index">04</span> Experience</p>
+        <SectionHeading label="experience" />
         <h2>Where I've worked</h2>
         <p className="section__lede">
           A brief timeline of roles that shaped how I design and build.
