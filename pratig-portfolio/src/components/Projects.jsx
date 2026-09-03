@@ -40,12 +40,11 @@ const PROJECTS = [
     id: 'accessibility-dashboard',
     name: 'Accessibility Compliance Dashboard',
     summary:
-      'Headless-browser crawler (Playwright) that runs automated WCAG/AODA checks via axe-core and feeds a React dashboard with plain-language fix suggestions. Stores historical scan results in MongoDB to track a site\'s accessibility score over time — targeting AODA-regulated businesses that need audit trails, not just one-off reports.',
-    stack: ['React', 'Node.js', 'Express', 'Playwright', 'axe-core', 'MongoDB'],
-    repoUrl: 'https://github.com/PratigMgr',
-    liveUrl: '#',
+      'Headless-browser crawler (Playwright) that runs automated WCAG 2.1 AA checks via axe-core and feeds a React dashboard tracking each site\'s compliance score over time. Crawls via both link-following and sitemap.xml discovery, flags score regressions between scans, and sends an email alert when a site\'s score drops. Deployed across three services — Vercel, Render, and MongoDB Atlas.',
+    stack: ['React', 'Node.js', 'Express', 'Playwright', 'axe-core', 'MongoDB', 'Docker'],
+    repoUrl: 'https://github.com/PratigMgr/a11y-dashboard',
+    liveUrl: 'https://a11y-dashboard-one.vercel.app',
     featured: true,
-    inProgress: true,
   },
   {
     id: 'component-library',
