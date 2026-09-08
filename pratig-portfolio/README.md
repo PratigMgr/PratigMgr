@@ -4,7 +4,7 @@ A personal portfolio site built with React + Vite — dark-themed, with a
 playable Snake game hidden behind a mode toggle in place of the usual
 theme switch.
 
-![React](https://img.shields.io/badge/React-18-61DAFB) ![Vite](https://img.shields.io/badge/Build-Vite-646CFF) ![CSS](https://img.shields.io/badge/Styling-CSS%20Variables-1572B6)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-Build-646CFF?logo=vite&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-Styling-1572B6?logo=css3&logoColor=white)
 
 ## Run it locally
 
