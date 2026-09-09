@@ -11,7 +11,7 @@
 
   <br>
 
-  I'm a full-stack developer with a Diploma in Computer Programming, comfortable moving between a **React/TypeScript** front end, a **C#/.NET** or **Node.js/Express** back end, and both relational and NoSQL databases. I've shipped systems end-to-end — from a repository-pattern C#/.NET data-access layer to a containerized React/Node/MongoDB dashboard with automated tests at multiple levels (Playwright, axe-core). Lately I've been folding LLM APIs and vector search into real projects, like a self-hosted PR review agent. Looking to bring that range to a full-stack developer role in Canada.
+  I'm a full-stack developer with a Diploma in Computer Programming, comfortable moving between a **React/TypeScript** front end, a **C#/.NET** or **Node.js/Express** back end, and both relational and NoSQL databases. I've shipped systems end-to-end from a repository-pattern C#/.NET data-access layer to a containerized React/Node/MongoDB dashboard with automated tests at multiple levels (Playwright, axe-core). Lately I've been folding LLM APIs and vector search into real projects, like a self-hosted PR review agent. Looking to bring that range to a full-stack developer role in Canada.
 
   <br>
 
