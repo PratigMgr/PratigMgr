@@ -4,8 +4,7 @@
 
 <!-- Left: Intro Text -->
 <h1>Hi, I'm Pratig 👋</h1>
-<p>🎓 Computer Programming student</p>
-<p>💻 Aspiring <strong>Junior Software Developer</strong></p>
+<p>💻 Aspiring <strong>Software Developer</strong></p>
 <p>🧠 Strong interest in backend development with hands-on full-stack projects</p>
 <p>🚀 Building real-world applications using <strong>TypeScript, React, Node.js, and JavaScript</strong></p>
 <p>🔧 Gaining backend experience through projects in <strong>Node.js/Express, Java, and Python</strong></p>
