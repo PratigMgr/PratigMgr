@@ -47,12 +47,12 @@ const PROJECTS = [
     featured: true,
   },
   {
-    id: 'component-library',
-    name: 'Figma-Synced Accessible Component Library',
+    id: 'yatra-companion',
+    name: 'YatraCompanion',
     summary:
-      'Publishable npm component library that pulls design tokens (color, spacing, typography) directly from Figma via the Figma API, keeping design and code automatically in sync. Components are accessibility-first — ARIA roles, keyboard navigation — validated with axe-core and documented in Storybook with CI/CD for automated versioning and npm publishing.',
-    stack: ['React', 'TypeScript', 'Storybook', 'Figma API', 'axe-core'],
-    repoUrl: 'https://github.com/PratigMgr',
+      'Android app in Kotlin that helps tourists in Nepal budget their trips and discover cultural, historical, and natural-beauty locations through location detection. Adds AI-guided recommendations on the best time to visit and expected local costs. A self-directed project, and my first real-world product built in Kotlin.',
+    stack: ['Kotlin', 'Android', 'Location Services', 'AI Integration'],
+    repoUrl: '#',
     liveUrl: '#',
     inProgress: true,
   },
